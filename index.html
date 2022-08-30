@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link href="missing-security-controls.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="before" class="col">
+          <fieldset>
+            <legend>
+              Attack Vector (AV)
+            </legend>
+            <div class="btn-group">
+              <input name="av-before" id="av-before-n" type="radio" data-field="av" data-value="n" checked />
+              <label for="av-before-n" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="A vulnerability exploitable with Network access means the vulnerable component is bound to the network stack and the attacker's path is through OSI layer 3 (the network layer). Such a vulnerability is often termed 'remotely exploitable' and can be thought of as an attack being exploitable one or more network hops away (e.g. across layer 3 boundaries from routers).">Network
+              (AV:N)</label>
+              <input name="av-before" id="av-before-a" type="radio" data-field="av" data-value="a" />
+              <label for="av-before-a" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="A vulnerability exploitable with Adjacent Network access means the vulnerable component is bound to the network stack, however the attack is limited to the same shared physical (e.g. Bluetooth, IEEE 802.11), or logical (e.g. local IP subnet) network, and cannot be performed across an OSI layer 3 boundary (e.g. a router).">Adjacent
+              Network (AV:A)</label>
+              <input name="av-before" id="av-before-l" type="radio" data-field="av" data-value="l" />
+              <label for="av-before-l" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="A vulnerability exploitable with Local access means that the vulnerable component is not bound to the network stack, and the attacker's path is via read/write/execute capabilities. In some cases, the attacker may be logged in locally in order to exploit the vulnerability, or may rely on User Interaction to execute a malicious file.">Local
+              (AV:L)</label>
+              <input name="av-before" id="av-before-p" type="radio" data-field="av" data-value="p" />
+              <label for="av-before-p" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="A vulnerability exploitable with Physical access requires the attacker to physically touch or manipulate the vulnerable component, such as attaching an peripheral device to a system.">Physical
+              (AV:P)</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              Attack Complexity (AC)
+            </legend>
+            <div class="btn-group">
+              <input name="ac-before" id="ac-before-l" type="radio" data-field="ac" data-value="l" checked />
+              <label for="ac-before-l" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="Specialized access conditions or extenuating circumstances do not exist. An attacker can expect repeatable success against the vulnerable component.">Low
+              (AC:L)</label>
+              <input name="ac-before" id="ac-before-h" type="radio" data-field="ac" data-value="h" />
+              <label for="ac-before-h" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="A successful attack depends on conditions beyond the attacker's control. That is, a successful attack cannot be accomplished at will, but requires the attacker to invest in some measurable amount of effort in preparation or execution against the vulnerable component before a successful attack can be expected.">High
+              (AC:H)</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              Privileges Required (PR)
+            </legend>
+            <div class="btn-group">
+              <input name="pr-before" id="pr-before-n" type="radio" data-field="pr" data-value="n" checked />
+              <label for="pr-before-n" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files to carry out an attack.">None
+              (PR:N)</label>
+              <input name="pr-before" id="pr-before-l" type="radio" data-field="pr" data-value="l" />
+              <label for="pr-before-l" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="The attacker is authorized with (i.e. requires) privileges that provide basic user capabilities that could normally affect only settings and files owned by a user. Alternatively, an attacker with Low privileges may have the ability to cause an impact only to non-sensitive resources.">Low
+              (PR:L)</label>
+              <input name="pr-before" id="pr-before-h" type="radio" data-field="pr" data-value="h" />
+              <label for="pr-before-h" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="The attacker is authorized with (i.e. requires) privileges that provide significant (e.g. administrative) control over the vulnerable component that could affect component-wide settings and files.">High
+              (PR:H)</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              User Interaction (UI)
+            </legend>
+            <div class="btn-group">
+              <input name="ui-before" id="ui-before-n" type="radio" data-field="ui" data-value="n" checked />
+              <label for="ui-before-n" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="The vulnerable system can be exploited without interaction from any user.">None (UI:N)</label>
+              <input name="ui-before" id="ui-before-r" type="radio" data-field="ui" data-value="r" />
+              <label for="ui-before-r" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="Successful exploitation of this vulnerability requires a user to take some action before the vulnerability can be exploited, such as convincing a user to click a link in an email.">Required
+                (UI:R)</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              Scope (S)
+            </legend>
+            <div class="btn-group">
+              <input name="s-before" id="s-before-u" type="radio" data-field="s" data-value="u" checked />
+              <label for="s-before-u" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="An exploited vulnerability can only affect resources managed by the same authority. In this case the vulnerable component and the impacted component are the same.">Unchanged
+              (S:U)</label>
+              <input name="s-before" id="s-before-c" type="radio" data-field="s" data-value="c" />
+              <label for="s-before-c" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="An exploited vulnerability can affect resources beyond the authorization privileges intended by the vulnerable component. In this case the vulnerable component and the impacted component are different.">Changed
+              (S:C)</label>
+            </div>
+          </fieldset>
+          <div class="text-center">Score: <span class="score">0.0</span></div>
+        </div>
+        <div class="col col-1 text-center mt-auto mb-auto large-arrow">
+          →
+        </div>
+        <div id="after" class="col">
+          <fieldset>
+            <legend>
+              Attack Vector (AV)
+            </legend>
+            <div class="btn-group">
+              <input name="av-after" id="av-after-n" type="radio" data-field="av" data-value="n" checked />
+              <label for="av-after-n" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="A vulnerability exploitable with Network access means the vulnerable component is bound to the network stack and the attacker's path is through OSI layer 3 (the network layer). Such a vulnerability is often termed 'remotely exploitable' and can be thought of as an attack being exploitable one or more network hops away (e.g. across layer 3 boundaries from routers).">Network
+              (AV:N)</label>
+              <input name="av-after" id="av-after-a" type="radio" data-field="av" data-value="a" />
+              <label for="av-after-a" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="A vulnerability exploitable with Adjacent Network access means the vulnerable component is bound to the network stack, however the attack is limited to the same shared physical (e.g. Bluetooth, IEEE 802.11), or logical (e.g. local IP subnet) network, and cannot be performed across an OSI layer 3 boundary (e.g. a router).">Adjacent
+              Network (AV:A)</label>
+              <input name="av-after" id="av-after-l" type="radio" data-field="av" data-value="l" />
+              <label for="av-after-l" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="A vulnerability exploitable with Local access means that the vulnerable component is not bound to the network stack, and the attacker's path is via read/write/execute capabilities. In some cases, the attacker may be logged in locally in order to exploit the vulnerability, or may rely on User Interaction to execute a malicious file.">Local
+              (AV:L)</label>
+              <input name="av-after" id="av-after-p" type="radio" data-field="av" data-value="p" />
+              <label for="av-after-p" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="A vulnerability exploitable with Physical access requires the attacker to physically touch or manipulate the vulnerable component, such as attaching an peripheral device to a system.">Physical
+              (AV:P)</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              Attack Complexity (AC)
+            </legend>
+            <div class="btn-group">
+              <input name="ac-after" id="ac-after-l" type="radio" data-field="ac" data-value="l" checked />
+              <label for="ac-after-l" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="Specialized access conditions or extenuating circumstances do not exist. An attacker can expect repeatable success against the vulnerable component.">Low
+              (AC:L)</label>
+              <input name="ac-after" id="ac-after-h" type="radio" data-field="ac" data-value="h" />
+              <label for="ac-after-h" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="A successful attack depends on conditions beyond the attacker's control. That is, a successful attack cannot be accomplished at will, but requires the attacker to invest in some measurable amount of effort in preparation or execution against the vulnerable component before a successful attack can be expected.">High
+              (AC:H)</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              Privileges Required (PR)
+            </legend>
+            <div class="btn-group">
+              <input name="pr-after" id="pr-after-n" type="radio" data-field="pr" data-value="n" checked />
+              <label for="pr-after-n" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files to carry out an attack.">None
+              (PR:N)</label>
+              <input name="pr-after" id="pr-after-l" type="radio" data-field="pr" data-value="l" />
+              <label for="pr-after-l" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="The attacker is authorized with (i.e. requires) privileges that provide basic user capabilities that could normally affect only settings and files owned by a user. Alternatively, an attacker with Low privileges may have the ability to cause an impact only to non-sensitive resources.">Low
+              (PR:L)</label>
+              <input name="pr-after" id="pr-after-h" type="radio" data-field="pr" data-value="h" />
+              <label for="pr-after-h" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="The attacker is authorized with (i.e. requires) privileges that provide significant (e.g. administrative) control over the vulnerable component that could affect component-wide settings and files.">High
+              (PR:H)</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              User Interaction (UI)
+            </legend>
+            <div class="btn-group">
+              <input name="ui-after" id="ui-after-n" type="radio" data-field="ui" data-value="n" checked />
+              <label for="ui-after-n" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="The vulnerable system can be exploited without interaction from any user.">None (UI:N)</label>
+              <input name="ui-after" id="ui-after-r" type="radio" data-field="ui" data-value="r" />
+              <label for="ui-after-r" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="Successful exploitation of this vulnerability requires a user to take some action before the vulnerability can be exploited, such as convincing a user to click a link in an email.">Required
+                (UI:R)</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              Scope (S)
+            </legend>
+            <div class="btn-group">
+              <input name="s-after" id="s-after-u" type="radio" data-field="s" data-value="u" checked />
+              <label for="s-after-u" data-toggle="tooltip" data-placement="top" class="btn btn-secondary btn-round-left" title="An exploited vulnerability can only affect resources managed by the same authority. In this case the vulnerable component and the impacted component are the same.">Unchanged
+              (S:U)</label>
+              <input name="s-after" id="s-after-c" type="radio" data-field="s" data-value="c" />
+              <label for="s-after-c" data-toggle="tooltip" data-placement="top" class="btn btn-secondary" title="An exploited vulnerability can affect resources beyond the authorization privileges intended by the vulnerable component. In this case the vulnerable component and the impacted component are different.">Changed
+              (S:C)</label>
+            </div>
+          </fieldset>
+          <div class="text-center">Score: <span class="score">0.0</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        Delta: <span class="delta">0.0</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <span class="rating" data-content="Informational">Informational</span>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="missing-security-controls.js"></script>
+    <script>
+      function updateScore(elem) {
+        var score = calculate(elem);
+        $(elem).parent().parent().parent().find('.score').text(score);
+        
+        var delta = ($(".score")[0].innerText - $(".score")[1].innerText).toFixed(2);
+        $(".delta").text(delta);
+        
+        if (delta >= 2.8) {
+          $(".rating").text("High");
+        } else if (delta >= 1.3 && delta < 2.8) {
+          $(".rating").text("Medium");
+        } else if (delta >= 0.1 && delta < 1.3) {
+          $(".rating").text("Low");
+        } else {
+          $(".rating").text("Informational");
+        }
+        
+        $(".rating").attr("data-content", $(".rating").text());
+      }
+      
+      updateScore($("#av-before-n"));
+      updateScore($("#av-after-n"));
+      
+      $("input").click(function() {
+        updateScore(this);
+      });
+    </script>
+  </body>
+</html>
